@@ -1,0 +1,158 @@
+
+/* 1. Basic page setup */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #29234a;
+
+  background:
+    radial-gradient(circle at 15% 20%, #fff5b8 0 8%, transparent 9%),
+    radial-gradient(circle at 85% 80%, #ffb8df 0 10%, transparent 11%),
+    #b8a7ff;
+
+  transition: background 0.3s ease;
+}
+
+/* 2. Main content card */
+.card {
+  width: 100%;
+  max-width: 520px;
+  padding: 40px 28px;
+  text-align: center;
+
+  background: #fffdf5;
+  border: 3px solid #29234a;
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 #29234a;
+}
+
+/* 3. Heading and text */
+.label {
+  display: inline-block;
+  padding: 8px 12px;
+  background: #ffda75;
+  border: 2px solid #29234a;
+  border-radius: 6px;
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  margin: 22px 0 12px;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.1;
+}
+
+.description {
+  max-width: 340px;
+  margin: 0 auto 28px;
+  color: #625b78;
+  line-height: 1.7;
+}
+
+/* 4. Buttons */
+button {
+  width: 100%;
+  max-width: 290px;
+  padding: 14px 18px;
+  margin: 6px auto;
+
+  font: inherit;
+  font-weight: bold;
+  color: white;
+  background: #7555e8;
+
+  border: 2px solid #29234a;
+  border-radius: 9px;
+  box-shadow: 3px 3px 0 #29234a;
+
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #29234a;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #29234a;
+}
+
+button:focus-visible {
+  outline: 3px solid #29234a;
+  outline-offset: 4px;
+}
+
+button.secondary {
+  color: #29234a;
+  background: #ffda75;
+}
+
+/* 5. Message area */
+#message {
+  min-height: 48px;
+  margin: 22px auto 12px;
+  padding: 12px;
+
+  background: #f0eaff;
+  border: 2px dashed #9b87ed;
+  border-radius: 8px;
+
+  line-height: 1.5;
+}
+
+/* 6. Alternate theme */
+body.dark-theme {
+  color: #f7f2ff;
+  background: #29234a;
+}
+
+body.dark-theme .card {
+  color: #f7f2ff;
+  background: #443b69;
+  border-color: #ffda75;
+  box-shadow: 8px 8px 0 #17142b;
+}
+
+body.dark-theme .description {
+  color: #ded5f7;
+}
+
+body.dark-theme #message {
+  color: #29234a;
+  background: #f0eaff;
+}
+
+/* 7. Small-screen adjustments */
+@media (max-width: 400px) {
+  .card {
+    padding: 30px 18px;
+  }
+
+  .label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
